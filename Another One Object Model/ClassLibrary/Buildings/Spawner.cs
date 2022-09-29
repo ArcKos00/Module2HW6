@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    public class TimeTick
+    public class Spawner
     {
+        internal static void Spawn(Unit unit)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

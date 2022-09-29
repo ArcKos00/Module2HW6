@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary
+namespace ClassLibrary.Interfaces
 {
-    internal class Spawner
+    public interface IProgressBar
     {
+        public void ProgressBar();
     }
 }

@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ClassLibrary;
 
-namespace Another_One_Object_Model
+namespace ClassLibrary.Interfaces
 {
-    public class Manager
+    public interface IBuilding
     {
-        event TimeTick;
+        public void Building(float diff);
     }
 }

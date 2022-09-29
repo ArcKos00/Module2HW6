@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    public class Unit
+    public abstract class Unit
     {
+        private string _name;
+        private float _time;
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
+        public float TimeSpawn
+        {
+            get { return _time; }
+            set { _time = value; }
+        }
     }
 }

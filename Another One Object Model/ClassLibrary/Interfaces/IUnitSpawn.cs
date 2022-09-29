@@ -8,6 +8,6 @@ namespace ClassLibrary.Interfaces
 {
     public interface IUnitSpawn
     {
-        public void UnitSpawn();
+        public void UnitSpawn(Unit unit);
     }
 }
