@@ -1,6 +1,6 @@
 ﻿namespace ClassLibrary
 {
-    public class Class1
+    public abstract class Build
     {
 
     }
