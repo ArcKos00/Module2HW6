@@ -15,7 +15,7 @@ namespace ClassLibrary.Services
             Build[] builds = BuildsManager.GetInstance.Builds;
             Unit[] units = UnitsManager.GetInstance.Units;
             Console.Clear();
-            Console.WriteLine("Нажмите 1 - чтобы добавить Ферму, 2 - Железный рудник, 3 - Золотой рудник, 4 - Барак, 5 - Случайную постройку");
+            Console.WriteLine("Нажмите 1 - чтобы добавить Ферму, 2 - Железный рудник, 3 - Золотой рудник, 4 - Барак");
             Console.WriteLine("Нажмите SpaceBar - чтобы начать поиск");
 
             Console.WriteLine($"Ресурсы \nЕда: {Manager.Food} Железо: {Manager.Iron} Золото: {Manager.Gold}\n");

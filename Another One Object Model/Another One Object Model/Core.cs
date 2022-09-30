@@ -72,19 +72,52 @@ namespace Another_One_Object_Model
             switch (Console.ReadKey().Key)
             {
                 case ConsoleKey.D1:
-                    _builds.Add(false, "Farm");
+                    if (Manager.Gold >= Config.FarmCost)
+                    {
+                        _builds.Add(false, "Farm");
+                        Manager.Gold -= Config.FarmCost;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Недостаточно Золота!!");
+                    }
+
                     break;
                 case ConsoleKey.D2:
-                    _builds.Add(false, "Iron");
+                    if (Manager.Gold >= Config.IronMineCost)
+                    {
+                        _builds.Add(false, "Iron");
+                        Manager.Gold -= Config.IronMineCost;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Недостаточно Золота!!");
+                    }
+
                     break;
                 case ConsoleKey.D3:
-                    _builds.Add(false, "Gold");
+                    if (Manager.Gold >= Config.GoldMineCost)
+                    {
+                        _builds.Add(false, "Gold");
+                        Manager.Gold -= Config.GoldMineCost;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Недостаточно Золота!!");
+                    }
+
                     break;
                 case ConsoleKey.D4:
-                    _builds.Add(false, "Barracks");
-                    break;
-                case ConsoleKey.D5:
-                    _builds.Add(true);
+                    if (Manager.Gold >= Config.BarrackCost)
+                    {
+                        _builds.Add(false, "Barracks");
+                        Manager.Gold -= Config.BarrackCost;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Недостаточно Золота!!");
+                    }
+
                     break;
                 case ConsoleKey.Spacebar:
                     ChangeExtension();
