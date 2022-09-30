@@ -8,10 +8,10 @@ namespace ClassLibrary
 {
     public class Manager
     {
+        private static Manager _instance = new Manager();
         private static int _food;
         private static int _gold;
         private static int _iron;
-        private static Manager _instance = new Manager();
         private Manager()
         {
         }
@@ -49,20 +49,12 @@ namespace ClassLibrary
         public static int Food
         {
             get { return _food; }
-            set { Food = value; }
+            set { _food = value; }
         }
 
-        public void Starter()
+        public void Tick()
         {
-            Build build1 = new FactoryResource(Config.FarmCost, Config.FarmName, Config.FarmTimeBuilding, Config.FarmHealth, Config.FarmRes, Config.FarmCountRes, Config.FarmTimeExtract);
-
-            while (true)
-            {
                 MicroTimer?.Invoke();
-                Console.WriteLine("Food: " + _food);
-                Console.WriteLine("Iron: " + _iron);
-                Console.WriteLine("Gold: " + _gold);
-            }
         }
 
         public static void AddToManager(int count, string name)

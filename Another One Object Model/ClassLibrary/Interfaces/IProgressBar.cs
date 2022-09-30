@@ -8,6 +8,9 @@ namespace ClassLibrary.Interfaces
 {
     public interface IProgressBar
     {
+        public float Progress
+        { get; set; }
+
         public void ProgressBar();
     }
 }

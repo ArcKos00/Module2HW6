@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System;
 
-namespace ClassLibrary
+namespace ClassLibrary.Services
 {
     public static class BuildSpawner
     {

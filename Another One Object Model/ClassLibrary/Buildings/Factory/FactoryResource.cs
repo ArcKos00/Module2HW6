@@ -7,7 +7,7 @@ using ClassLibrary.Interfaces;
 
 namespace ClassLibrary
 {
-    public class FactoryResource : Factory, IResourceSpawn, IProgressBar
+    public class FactoryResource : Factory, IBuilding, IResourceSpawn, IProgressBar
     {
         private Resource _resource;
         private int _countRes;
@@ -25,6 +25,11 @@ namespace ClassLibrary
 
         public override void ProgressBar()
         {
+            if (!IsEnable)
+            {
+                return;
+            }
+
             Progress += 0.1f;
             if (Progress >= _time)
             {

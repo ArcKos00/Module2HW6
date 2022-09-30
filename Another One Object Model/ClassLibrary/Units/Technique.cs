@@ -8,5 +8,9 @@ namespace ClassLibrary
 {
     public class Technique : Unit
     {
+        public Technique(string name, float time, int cost)
+            : base(name, time, cost)
+        {
+        }
     }
 }

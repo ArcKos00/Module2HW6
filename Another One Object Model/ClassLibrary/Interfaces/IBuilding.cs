@@ -8,6 +8,6 @@ namespace ClassLibrary.Interfaces
 {
     public interface IBuilding
     {
-        public void Building(float diff);
+        public void Buildings(float diff);
     }
 }

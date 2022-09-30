@@ -7,7 +7,7 @@ using ClassLibrary.Interfaces;
 
 namespace ClassLibrary
 {
-    public abstract class Factory : Build, IProgressBar
+    public abstract class Factory : Build, IBuilding, IProgressBar
     {
         private float _progress;
         public Factory(int cost, float buildingTime, float health)
@@ -22,7 +22,7 @@ namespace ClassLibrary
             set { _progress = value; }
         }
 
-        public virtual void ProgressBar()
+        public override void ProgressBar()
         {
         }
     }

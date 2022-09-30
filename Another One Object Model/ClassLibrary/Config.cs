@@ -56,6 +56,29 @@ namespace ClassLibrary
         public static float BarrackBuildingTime => 10f;
         public static float BarrackHealth => 100;
         public static int BarrackQueue => 5;
-        public static Unit[] BarrackUnits => new Unit[] { new Soldier(), new Technique() };
+        public static Unit[] BarrackUnits => new Unit[]
+        {
+            new Soldier(
+                SoldierName,
+                SoldierSpawnTime,
+                SoldierCost),
+            new Technique(
+                CarName,
+                CarSpawnTime,
+                CarCost)
+        };
+
+        // Soldier
+        public static string SoldierName => "Soldier";
+        public static float SoldierSpawnTime => 5f;
+        public static int SoldierCost => 50;
+        public static int SoldierFoodNeeded => 10;
+
+        // Car
+        public static string CarName => "Jeep";
+        public static float CarSpawnTime => 7f;
+        public static int CarCost => 100;
+        public static int CarFoodNeeded => 15;
+        public static int CarIronNeed => 20;
     }
 }

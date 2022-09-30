@@ -2,20 +2,20 @@
 
 namespace ClassLibrary
 {
-    public abstract class Build : IBuilding
+    public abstract class Build : IBuilding, IProgressBar
     {
         private bool _isEnable;
         private float _maxHealth;
         private float _currentHealth;
         private int _cost;
-        private string _name;
+        private string? _name;
         private float _buildTime;
         public Build(int cost, float buildingTime, float health)
         {
             _cost = cost;
             _maxHealth = health;
             _buildTime = buildingTime;
-            Building(health / buildingTime);
+            Manager.GetInstance.MicroTimer += Building;
         }
 
         public int Cost
@@ -45,17 +45,30 @@ namespace ClassLibrary
             set { _currentHealth = value; }
         }
 
-        public virtual void Building(float diff)
+        public bool IsEnable
         {
-            while (!_isEnable)
+            get { return _isEnable; }
+        }
+
+        public float Progress { get; set; }
+        public void Building()
+        {
+            Buildings(Health / BuildingTime / 10);
+        }
+
+        public virtual void Buildings(float diff)
+        {
+            CurrHealth += diff;
+            if (CurrHealth >= Health)
             {
-                CurrHealth += diff;
-                if (CurrHealth >= Health)
-                {
-                    CurrHealth = Health;
-                    _isEnable = true;
-                }
+                CurrHealth = Health;
+                _isEnable = true;
+                Manager.GetInstance.MicroTimer -= Building;
             }
+        }
+
+        public virtual void ProgressBar()
+        {
         }
     }
 }
